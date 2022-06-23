@@ -1,0 +1,41 @@
+<%- include ../layouts/header.ejs %>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading"><%= title %><a href="/resenha/add" class= "pull-right"><i class="fa fa-plus fa-fw"></i>Add nova resenha</a></div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Autor</th>    
+                            <th>Nome</th>
+                            <th>Resenha</th>
+                            <th>Data de Publicação</th>
+                            <th>Categoria</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <% if (resenha) { %>
+                                <% resenha.forEach(function(resenha){ %>
+                                    <tr>
+                                        <td><%= resenha.autor %></td>
+                                        <td><%= resenha.nome %></td>
+                                        <td><%= resenha.resenha %></td>
+                                        <td><%= moment(resenha.data_de_publi).format(shortDateFormat) %></td>
+                                        <td><%= resenha.categoria %></td>
+                                        <td>
+                                            <a href="/resenha/edit/<%= resenha.id %>"><i class="fa fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            <% } %>        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../layouts/footer.ejs %>

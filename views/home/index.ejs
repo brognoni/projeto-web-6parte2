@@ -1,0 +1,23 @@
+<%- include ../layouts/header2.ejs %>
+<!-- <div class="row">
+    <div class="col-sm-12">
+        <h1><%= title %></h1>
+    </div>
+</div> -->
+
+<div id="corpo-formu">
+    <form method="get" action="/home">
+      <h1><i class="fab fa-node"></i></h1><br>
+      <input id="email" type="email" name="email" placeholder="Email" autocomplete="off" id="email"><br><br>
+  
+      <input type="password" name="senha" placeholder="Senha" id="senha"><br><br>
+        
+      <a href="/home" class="btn" id ="btn" >Entrar 2</a>
+
+      <!-- <button class="btn" id ="btn" >Entrar</button><br> -->
+
+    </form>
+  </div>
+  <script src="/public/script.js"></script>
+
+<%- include ../layouts/footer.ejs %>
